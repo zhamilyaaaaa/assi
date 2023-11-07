@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Racer Astana</title>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<style>
+  @keyframes rotateHeader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+
+<body>
+<div class='loading'>
+  <div class="loader">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+
+<header>
+  <!-- Navigation -->
+  <nav id="mainheader" class="navbar navbar-expand-lg static-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Racer Astana" title="Racer Astana" height="36">
+      </a>
+      <div class="mainlogo">
+        <a id="newAlogo" href="index.html">Racer Astana</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span id="navbarICONhamburger" class="navbar-toggler-icon">&#9776</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class "nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul id="mainUL" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="index.html">Home</a></li>
+              <li><a class="dropdown-item" href="Pricelist.html">Price list</a></li>
+              <li><a class="dropdown-item" href="Games.html">Services</a></li>
+              <li><a class="dropdown-item" href="Location.html">Location</a></li>
+              <li>
+                <hr id="dividerHR" class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav aria-label="breadcrumb" style="margin-left: 50px;">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="registration.html">Registration</a></li>
+  </ul>
+</nav>
+
+<center>
+  <form class="box2" action="registration.php" method="POST" id="registrationForm">
+    <h1 id="registrationHeader">Registration</h1>
+    <input type="text" placeholder="Name" name="username" required>
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="password" placeholder="Password" name="password" minlength="8" required>
+    <input type="submit" value="Press ENTER to Register">
+    <div>
+      <a href="login.html">Already have an account?</a>
+    </div>
+  </form>
+
+  <script>
+    const registrationForm = document.getElementById('registrationForm');
+    const registrationHeader = document.getElementById('registrationHeader');
+
+    registrationForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      alert('You are registered!'); // Display an alert
+      // You can add code here to submit the form data to the server if needed
+
+      // Add a smooth rotation animation to the "Registration" header
+      registrationHeader.style.animation = 'rotateHeader 2s linear';
+      setTimeout(() => {
+        registrationHeader.style.animation = 'none'; // Remove animation after completion
+      }, 2000);
+    });
+
+    registrationForm.addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default form submission
+        alert('You are registered!'); // Display an alert
+        // You can add code here to submit the form data to the server if needed
+
+        // Add a smooth rotation animation to the "Registration" header
+        registrationHeader.style.animation = 'rotateHeader 2s linear';
+        setTimeout(() => {
+          registrationHeader.style.animation = 'none'; // Remove animation after completion
+        }, 2000);
+      }
+    });
+  </script>
+</center>
+
+<div id="space"></div>
+
+<footer class="newfooter"
+  class="text-center text-lg-start text-black"
+  style="background-color: #4d1d33"
+>
+<!-- Rest of your footer code -->
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  let loadWrapper = document.querySelector('.loading');
+  window.addEventListener('load', function(){
+    loadWrapper.parentElement.removeChild(loadWrapper);
+  });
+</script>
+
+<script>
+  function theme() {
+    const toggleTheme = document.querySelector('.toggle-theme');
+    let el = document.documentElement;
+    toggleTheme.addEventListener('click', () => {
+      if(el.hasAttribute('data-theme')) {
+        el.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+        icon.src = "images/moon.png";
+      } else {
+        el.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        icon.src = "images/sun.png";
+      }
+    });
+
+    if(localStorage.getItem('theme') !== null){
+      el.setAttribute('data-theme', 'dark');
+      icon.src = "images/sun.png";
+    }
+  }
+  theme();
+</script>
+
+<script>
+  const slides=document.querySelector(".slider").children;
+  const prev=document.querySelector(".prev");
+  const next=document.querySelector(".next");
+  let index=0;
+
+  prev.addEventListener("click", function(){
+    prevSlide();
+    resetTimer();
+  })
+
+  next.addEventListener("click", function(){
+    nextSlide();
+    resetTimer();
+  }
+
+  function indicateSlide(element){
+    index=element.id;
+    changeSlide();
+    resetTimer();
+  }
+
+  function prevSlide(){
+    if(index==0){
+      index=slides.length-1;
+    }
+    else{
+      index--;
+    }
+    changeSlide();
+  }
+
+  function nextSlide(){
+    if(index==slides.length-1){
+      index=0;
+    }
+    else{
+      index++;
+    }
+    changeSlide();
+  }
+
+  function changeSlide(){
+    for(let i=0; i<slides.length; i++){
+      slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active");
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer=setInterval(autoPlay,4000);
+  }
+
+  function autoPlay(){
+    nextSlide();
+  }
+  let timer=setInterval(autoPlay,4000);
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Наверх">&#8593</button>
+<script>
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+</body>
+</html>
