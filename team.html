@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Keeping a healthy lifestyle</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        function playSound(url) {
+            var audio = new Audio(url);
+            audio.play();
+        }
+
+        function checkQuiz() {
+            // Define the correct answers
+            var correctAnswers = {
+                q1: "b",
+                q2: "a",
+                q3: "b",
+                q4: "b",
+                q5: "b",
+                q6: "c",
+                q7: "c",
+                q8: "c",
+                q9: "b",
+                q10: "b"
+            };
+
+            // Initialize score
+            var score = 0;
+
+            // Loop through each question
+            for (var i = 1; i <= 10; i++) {
+                var questionName = "q" + i;
+                var userAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+
+                if (userAnswer) {
+                    // Check if the answer is correct
+                    if (userAnswer.value === correctAnswers[questionName]) {
+                        score++;
+                    }
+                }
+            }
+
+            // Display congratulations message if score is 7 or more and play appropriate sound
+            if (score >= 7) {
+                playSound("sounds/tada-fanfare-a-6313.mp3");
+                alert("Congratulations! You passed the quiz!Your score is: " + score + "/10");
+            } else {
+                playSound("sounds/wrong-answer-126515.mp3");
+                alert("Sorry, you didn't pass the quiz. Better luck next time. Your score is: " + score + "/10");
+                
+            }
+        }
+    </script>
+    <style>
+        input[type="button"] {
+            background-color: green;
+            border: 2px solid darkgreen;
+            color: white; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            border-radius: 8px; 
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg  navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5" style="background-color:#204524;" >
+        <a href="index.html" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Farm</span>Fresh</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="product.html" class="nav-item nav-link">Product</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Blog</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="sportblog.html" class="dropdown-item">Sport Blog</a>
+                        <a href="foodblog.html" class="dropdown-item">Food blog</a>
+                        <a href="team.html" class="dropdown-item">Quiz</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 bg-hero mb-5">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="display-1 text-white mb-md-4">Healthy Lifestyle Quiz</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid about pt-5">
+        <div class="container">
+            <div class="row gx-5">
+
+    <form action="quiz-results.html" method="post">
+        <fieldset>
+            <legend><strong><h2>Questions 1-2: Sleep and Nutrition</h2></strong></legend>
+            <ol>
+                <li>
+                    <h5><strong>What mineral, found in foods like leafy green vegetables and nuts, plays a role in muscle relaxation and can contribute to better sleep?</strong></h5>
+                    <label><input type="radio" name="q1" value="a"> a) Iron</label>
+                    <label><input type="radio" name="q1" value="b"> b) Magnesium</label>
+                    <label><input type="radio" name="q1" value="c"> c) Calcium</label>
+                    <label><input type="radio" name="q1" value="d"> d) Potassium</label>
+                </li> <br>
+
+                <li>
+                    <h5><strong>Which amino acid, present in foods like turkey and nuts, contributes to the production of serotonin and melatonin, hormones that regulate sleep?</strong></h5>
+                    <label><input type="radio" name="q2" value="a"> a) Tryptophan</label>
+                    <label><input type="radio" name="q2" value="b"> b) Valine</label>
+                    <label><input type="radio" name="q2" value="c"> c) Glutamine</label>
+                    <label><input type="radio" name="q2" value="d"> d) Serine</label>
+                </li><br>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong><h2>Questions 3-4: Sports and Immunity</h2></strong></legend>
+            <ol>
+                <li>
+                    <h5><strong>Engaging in which type of exercise has been linked to immune system improvements by promoting cardiovascular health?</strong></h5>
+                    <label><input type="radio" name="q3" value="a"> a) Weightlifting</label>
+                    <label><input type="radio" name="q3" value="b"> b) Running</label>
+                    <label><input type="radio" name="q3" value="c"> c) Yoga</label>
+                    <label><input type="radio" name="q3" value="d"> d) Pilates</label>
+                </li> <br>
+
+                <li>
+                    <h5><strong>Team sports, such as soccer or basketball, not only provide physical benefits but also contribute to mental well-being by fostering what?</strong></h5>
+                    
+                    <label><input type="radio" name="q4" value="a"> a) Competition</label>
+                    <label><input type="radio" name="q4" value="b"> b) Social connections</label>
+                    <label><input type="radio" name="q4" value="c"> c) Stress</label>
+                    <label><input type="radio" name="q4" value="d"> d) Isolation</label>
+                </li> <br>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong><h2>Questions 5-6: Foods and Inflammation</h2></strong></legend>
+            <ol>
+                <li>
+                    <h5><strong>Which types of fats, found in fried foods and some margarines, are linked to inflammation in the body?</strong></h5>
+                    
+                    <label><input type="radio" name="q5" value="a"> a) Monounsaturated fats</label>
+                    <label><input type="radio" name="q5" value="b"> b) Saturated and trans fats</label>
+                    <label><input type="radio" name="q5" value="c"> c) Omega-3 fatty acids</label>
+                    <label><input type="radio" name="q5" value="d"> d) Polyunsaturated fats</label>
+                </li> <br>
+
+                <li>
+                    <h5><strong>Artificial trans fats, often found in partially hydrogenated oils, are known to promote what in the body?</strong></h5>
+                    <label><input type="radio" name="q6" value="a"> a) Weight loss</label>
+                    <label><input type="radio" name="q6" value="b"> b) Muscle growth</label>
+                    <label><input type="radio" name="q6" value="c"> c) Inflammation</label>
+                    <label><input type="radio" name="q6" value="d"> d) Hydration</label>
+                </li> <br>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong><h2>Questions 7-8: General Health and Lifestyle</h2></strong></legend>
+            <ol>
+                <li>
+                    <h5><strong>Besides physical benefits, what do outdoor sports expose individuals to that is a natural source of vitamin D?</strong></h5>
+                    <label><input type="radio" name="q7" value="a"> a) Fresh air</label>
+                    <label><input type="radio" name="q7" value="b"> b) Rain</label>
+                    <label><input type="radio" name="q7" value="c"> c) Sunlight</label>
+                    <label><input type="radio" name="q7" value="d"> d) Wind</label>
+                </li><br>
+
+                <li>
+                    <h5><strong>What does a balanced and varied diet rich in fruits, vegetables, whole grains, and lean proteins contribute to?</strong></h5>
+                    
+                    <label><input type="radio" name="q8" value="a"> a) Chronic diseases</label>
+                    <label><input type="radio" name="q8" value="b"> b) Inflammation</label>
+                    <label><input type="radio" name="q8" value="c"> c) A resilient immune system</label>
+                    <label><input type="radio" name="q8" value="d"> d) Sleep disorders</label>
+                </li><br>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong><h2>Questions 9-10: Sleep and Healthy Habits</h2></strong></legend>
+            <ol>
+                <li>
+                    <h5><strong>Why is it recommended to limit fluid intake close to bedtime?</strong></h5>
+                    
+                    <label><input type="radio" name="q9" value="a"> a) To prevent dehydration</label>
+                    <label><input type="radio" name="q9" value="b"> b) To minimize disruptions during sleep</label>
+                    <label><input type="radio" name="q9" value="c"> c) To increase energy levels</label>
+                    <label><input type="radio" name="q9" value="d"> d) To induce lucid dreaming</label>
+                </li><br>
+
+                <li>
+                    <h5><strong>Which hormone is influenced by the consumption of foods containing tryptophan and plays a role in regulating the sleep-wake cycle?</strong></h5>
+                    <label><input type="radio" name="q10" value="a"> a) Insulin</label>
+                    <label><input type="radio" name="q10" value="b"> b) Melatonin</label>
+                    <label><input type="radio" name="q10" value="c"> c) Adrenaline</label>
+                    <label><input type="radio" name="q10" value="d"> d) Cortisol</label>
+                </li><br>
+            </ol>
+        </fieldset>
+
+        <!-- Add more fieldsets for the remaining questions -->
+
+        <input type="button" value="Submit Quiz"  onclick="checkQuiz()">
+    </form>
+
+</body>
+
+</html>
+
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    
+
+     <!-- Footer Start -->
+    <div class="container-fluid bg-footer text-white mt-5" style="background-color:#204524;">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-white mb-4">Get In Touch</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <p class="text-white mb-0">A.Bokeihanov street,25, Astana, Kazakhstan</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-white me-2"></i>
+                                <p class="text-white mb-0">ibenovazh04@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <p class="text-white mb-0">8747 2854 598</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://vk.com/ibenova"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://www.youtube.com/@zhamilyaibenova5566"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://ru.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Home</a>
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>About Us</a>
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Our Services</a>
+                                <a class="text-white" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Popular Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Product</a>
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Sport blog</a>
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Food blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-n5" >
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                        <h4 class="text-white">Follow our blog!</h4>
+                        <h6 class="text-white">Subscribe</h6>
+                        <p>get in touch with articles about healthy lifestyle!</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                <button class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
